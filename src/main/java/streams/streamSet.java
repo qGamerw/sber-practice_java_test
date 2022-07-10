@@ -19,11 +19,11 @@ public class streamSet {
         System.out.println("Elements in set:");
         treeSet.forEach( (elem) -> System.out.println(elem) );
 
-        //1
+        // 1
         System.out.println("\nLength of elements > 10:\n");
         treeSet.stream().filter(i -> i.length() > 10).forEach(System.out::println);
 
-        //2
+        // w2
         System.out.println("\nConvert filter elements to map\n");
         Stream<String> stream = treeSet.stream().filter(i -> i.length() > 10);
         Map<String, String> collect = stream.collect(Collectors.toMap(key -> key + "-key", key -> key + "-value"));

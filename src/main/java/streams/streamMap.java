@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 public class streamMap {
     public static void main (String[] args) {
+        
         Map<String, String> map = new HashMap<>();
         map.put("first-k", "first-val");
         map.put("second-k", "second-val");
@@ -17,13 +18,13 @@ public class streamMap {
         System.out.println("Items in map");
         map.entrySet().forEach(System.out::println);
 
-        //1
+        // 1
         System.out.println("\nConverct map to list");
         List<Entry<String, String>> list = new ArrayList<>();
         list = map.entrySet().stream().collect(Collectors.toList());
         list.stream().forEach(System.out::println);
 
-        //2
+        // sw2
         System.out.println("\nConverct map to 2 lists");
         List<String> listKey = map.keySet().stream().collect(Collectors.toList());
         List<String> listValue = map.values().stream().collect(Collectors.toList());

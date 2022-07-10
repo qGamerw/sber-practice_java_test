@@ -7,7 +7,7 @@ import lombok.Data;
 public class Team {
     private Human human;
     private int numberInTeam;
-    private  int limitTeam;
+    private int limitTeam;
     private ArrayList<Human> arrTeam;
 
     public Team () {

@@ -15,6 +15,7 @@ public class LambdaProgram {
     }
 
     public static void main (String[] args) {
+        
         int num1 = getNum( () -> 22);
         System.out.println("Num 1: " + num1);
 
@@ -26,6 +27,7 @@ public class LambdaProgram {
                 return num + rand;
             }
         });
+        
         System.out.println("Num 2: " + num2);
 
         System.out.println("10 > 15: " + equalsNums( (a,b) -> (a > b) ));

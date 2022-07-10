@@ -1,6 +1,7 @@
 package streams;
 
 public class TestClass {
+    
     private int hp;
     private int damage;
     private String name;

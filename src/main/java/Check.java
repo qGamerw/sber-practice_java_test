@@ -3,6 +3,7 @@ public class Check {
         Team team = new Team();
         team.createdTeam("Egor");
         team.createdTeam("Egor");
+        
         try {
             team.isAddTeam("Egor");
             team.isAddTeam("Egor");
