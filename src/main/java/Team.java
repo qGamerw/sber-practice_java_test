@@ -10,12 +10,12 @@ public class Team {
     private  int limitTeam;
     private ArrayList<Human> arrTeam;
 
-    public Team (){
+    public Team () {
         numberInTeam = 0;
         limitTeam = 2;
     }
 
-    public String createdTeam(String name){
+    public String createdTeam(String name) {
         if (numberInTeam > 0) {
             return "The team has already been created";
         } else {
@@ -26,7 +26,7 @@ public class Team {
             return "Team is created";
         }
     }
-    public String createdTeam(Human human){
+    public String createdTeam(Human human) {
         if (numberInTeam > 0) {
             return "The team has already been created";
         } else {
@@ -37,7 +37,7 @@ public class Team {
         }
     }
 
-    public boolean isAddTeam(String name) throws LimitedTeamException{
+    public boolean isAddTeam(String name) throws LimitedTeamException {
         if (numberInTeam == limitTeam)
             throw new LimitedTeamException("Limited number in the team");
         if (numberInTeam == 0)
@@ -48,7 +48,7 @@ public class Team {
         return true;
     }
 
-    public boolean isRemoveHumanTeam(){
+    public boolean isRemoveHumanTeam() {
         if (numberInTeam != 0) {
             arrTeam.remove(human);
             return true;
@@ -56,15 +56,15 @@ public class Team {
         return false;
     }
 
-    public void setHuman(Human human){
+    public void setHuman(Human human) {
         this.human = human;
     }
 
-    public String getHumanName(){
+    public String getHumanName() {
         return human.getNamePerson();
     }
 
-    private int getLimitTeam(){
+    private int getLimitTeam() {
         return limitTeam;
     }
 
