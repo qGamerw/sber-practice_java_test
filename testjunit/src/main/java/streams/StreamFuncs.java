@@ -16,28 +16,23 @@ public class StreamFuncs {
     }
 
     public static Map<String, String> getMap(Set<String> set) {
-        Map<String, String> map = set.stream()
+        return set.stream()
                 .filter(i -> i.length() > 10)
                 .collect(Collectors.toMap(key -> key + "-key", key -> key + "-value"));
-        return map;
     }
 
     public static List<String> getListkeyAndValue(HashMap<String, String> map) {
-        List<String> listkeyAndValue = map
-                .entrySet()
+        return map.entrySet()
                 .stream()
                 .flatMap(x -> Stream.of(x.getKey(), x.getValue()))
                 .collect(Collectors.toList());
-        return listkeyAndValue;
     }
 
     public static List<String> getListKeyEqualValue(HashMap<String, String> map) {
-        List<String> listKeyEqualValue = map
-                .entrySet()
+        return map.entrySet()
                 .stream()
                 .map(x -> x.getKey() + " == " + x.getValue())
                 .collect(Collectors.toList());
-        return listKeyEqualValue;
     }
 
     public static String getName(TestClass testClass) {
