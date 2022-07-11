@@ -59,8 +59,8 @@ public class StreamFuncsTest {
         map.put("third-k", "third-val");
         map.put("forth-k", "forth-val");
         assertEquals(8, StreamFuncs.getListkeyAndValue(map).size());
-        assertTrue(StreamFuncs.getListkeyAndValue(map).contains("first-k"));
-        assertTrue(StreamFuncs.getListkeyAndValue(map).contains("first-val"));
+        assertTrue(StreamFuncs.getListKeyAndValue(map).contains("first-k"));
+        assertTrue(StreamFuncs.getListKeyAndValue(map).contains("first-val"));
     }
 
     @Test
