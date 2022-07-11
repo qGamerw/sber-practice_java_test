@@ -21,8 +21,7 @@ public class LambdaProgramTest {
                         new TwoFunctionalInterface() {
                             @Override
                             public int doOneNum(int digit) {
-                                int d = 10;
-                                return digit + d;
+                                return digit + 10;
                             }
                         }
                 )
