@@ -1,6 +1,9 @@
-import java.util.ArrayList;
+package testsjunit;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
+
+import java.util.ArrayList;
 
 @Data
 @AllArgsConstructor
@@ -8,9 +11,9 @@ public class Team {
     private Human human;
     private int numberInTeam;
     private int limitTeam;
-    private ArrayList<Human> arrTeam;
+    private ArrayList<String> arrNamesTeam;
 
-    public Team () {
+    public Team() {
         numberInTeam = 0;
         limitTeam = 2;
     }
@@ -19,21 +22,11 @@ public class Team {
         if (numberInTeam > 0) {
             return "The team has already been created";
         } else {
-            numberInTeam = 1;
+            numberInTeam++;
             human = new Human(name);
-            arrTeam = new ArrayList<Human>();
-            arrTeam.add(human);
-            return "Team is created";
-        }
-    }
-    public String createdTeam(Human human) {
-        if (numberInTeam > 0) {
-            return "The team has already been created";
-        } else {
-            numberInTeam = 1;
-            arrTeam = new ArrayList<Human>();
-            arrTeam.add(human);
-            return "Team is created";
+            arrNamesTeam = new ArrayList<String>();
+            arrNamesTeam.add(name);
+            return "tests.Team is created";
         }
     }
 
@@ -42,15 +35,14 @@ public class Team {
             throw new LimitedTeamException("Limited number in the team");
         if (numberInTeam == 0)
             return false;
-        human = new Human(name);
         numberInTeam++;
-        arrTeam.add(human);
+        arrNamesTeam.add(name);
         return true;
     }
 
-    public boolean isRemoveHumanTeam() {
-        if (numberInTeam != 0) {
-            arrTeam.remove(human);
+    public boolean isRemoveHumanTeam(String name) {
+        if (numberInTeam != 0 && arrNamesTeam.contains(name)) {
+            arrNamesTeam.remove(name);
             return true;
         }
         return false;

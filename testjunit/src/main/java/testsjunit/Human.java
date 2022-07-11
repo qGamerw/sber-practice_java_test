@@ -1,9 +1,10 @@
+package testsjunit;
+
 public class Human {
-    
     private String namePerson;
     private String genus;
 
-    public Human (String namePerson) {
+    public Human(String namePerson) {
         this.namePerson = namePerson;
         this.genus = "man";
     }

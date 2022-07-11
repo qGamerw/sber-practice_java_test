@@ -2,6 +2,5 @@ package lambdas;
 
 @FunctionalInterface
 public interface TwoFunctionalInterface {
-    
-    int doOneNum (int one);
+    int doOneNum(int one);
 }
