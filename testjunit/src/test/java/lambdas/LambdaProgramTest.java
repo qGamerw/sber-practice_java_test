@@ -7,17 +7,9 @@ import static org.junit.Assert.*;
 public class LambdaProgramTest {
     @Test
     public void getNumTest() {
-        assertEquals(22, LambdaProgram.getNum(() -> 22));
-        assertEquals(22, LambdaProgram.getNum(() -> 11 + 11));
-        assertEquals(
-                11,
-                LambdaProgram.getNum(
-                        () -> {
-                            int a = 22 / 2;
-                            return a;
-                        }
-                )
-        );
+        assertEquals(22, LambdaProgram.getNum( () -> 22 ));
+        assertEquals(22, LambdaProgram.getNum( () -> 11 + 11 ));
+        assertEquals(11, LambdaProgram.getNum( () -> 22 / 2 ));
     }
 
     @Test
