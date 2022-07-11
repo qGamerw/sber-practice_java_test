@@ -21,7 +21,7 @@ public class StreamFuncs {
                 .collect(Collectors.toMap(key -> key + "-key", key -> key + "-value"));
     }
 
-    public static List<String> getListkeyAndValue(HashMap<String, String> map) {
+    public static List<String> getListKeyAndValue(HashMap<String, String> map) {
         return map.entrySet()
                 .stream()
                 .flatMap(x -> Stream.of(x.getKey(), x.getValue()))
