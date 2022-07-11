@@ -80,7 +80,6 @@ public class TeamTest {
         team.createdTeam("Egor");
 
         when(team.isAddTeam("Egor")).thenThrow(new LimitedTeamException("Limited number in the team"));
-        team.isAddTeam("Egor");
     }
 
     //4
