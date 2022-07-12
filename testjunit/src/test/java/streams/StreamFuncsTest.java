@@ -1,15 +1,28 @@
 package streams;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class StreamFuncsTest {
+    private HashMap<String, String> map = new HashMap<>();
+    private List<String> listkeyAndValue;
+    private List<String> listKeyEqualValue;
+
+    @Before
+    public void initializeMap() {
+        map.put("first-k", "first-val");
+        map.put("second-k", "second-val");
+        map.put("third-k", "third-val");
+        map.put("forth-k", "forth-val");
+        listkeyAndValue = StreamFuncs.getListkeyAndValue(map);
+        listKeyEqualValue = StreamFuncs.getListKeyEqualValue(map);
+    }
     @Test
     public void getAverageTest() {
         List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -41,28 +54,17 @@ public class StreamFuncsTest {
 
     @Test
     public void getKeyDoubleEqualValueTest() {
-        HashMap<String, String> map = new HashMap<>();
-        map.put("first-k", "first-val");
-        map.put("second-k", "second-val");
-        map.put("third-k", "third-val");
-        map.put("forth-k", "forth-val");
-        assertEquals(4, StreamFuncs.getListKeyEqualValue(map).size());
-        assertTrue(StreamFuncs.getListKeyEqualValue(map).contains("first-k == first-val"));
-        assertTrue(StreamFuncs.getListKeyEqualValue(map).contains("forth-k == forth-val"));
+        assertEquals(4, listKeyEqualValue.size());
+        assertTrue(listKeyEqualValue.contains("first-k == first-val"));
+        assertTrue(listKeyEqualValue.contains("forth-k == forth-val"));
     }
 
     @Test
     public void getListKeyAndValueTest() {
-        HashMap<String, String> map = new HashMap<>();
-        map.put("first-k", "first-val");
-        map.put("second-k", "second-val");
-        map.put("third-k", "third-val");
-        map.put("forth-k", "forth-val");
-        assertEquals(8, StreamFuncs.getListkeyAndValue(map).size());
-        assertTrue(StreamFuncs.getListKeyAndValue(map).contains("first-k"));
-        assertTrue(StreamFuncs.getListKeyAndValue(map).contains("first-val"));
+        assertEquals(8, listkeyAndValue.size());
+        assertTrue(listkeyAndValue.contains("first-k"));
+        assertTrue(listkeyAndValue.contains("first-val"));
     }
-
     @Test
     public void getNameTest() {
         TestClass testClass = null;
