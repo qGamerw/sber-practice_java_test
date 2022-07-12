@@ -10,19 +10,18 @@ import java.util.Set;
 import static org.junit.Assert.*;
 
 public class StreamFuncsTest {
-    private HashMap<String, String> map = new HashMap<>();
-    private List<String> listkeyAndValue;
-    private List<String> listKeyEqualValue;
+    private HashMap<String, String> map;
 
     @Before
     public void initializeMap() {
+        map = new HashMap<>();
         map.put("first-k", "first-val");
         map.put("second-k", "second-val");
         map.put("third-k", "third-val");
         map.put("forth-k", "forth-val");
-        listkeyAndValue = StreamFuncs.getListKeyAndValue(map);
-        listKeyEqualValue = StreamFuncs.getListKeyEqualValue(map);
+
     }
+
     @Test
     public void getAverageTest() {
         List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -54,6 +53,7 @@ public class StreamFuncsTest {
 
     @Test
     public void getKeyDoubleEqualValueTest() {
+        List<String> listKeyEqualValue = StreamFuncs.getListKeyEqualValue(map);
         assertEquals(4, listKeyEqualValue.size());
         assertTrue(listKeyEqualValue.contains("first-k == first-val"));
         assertTrue(listKeyEqualValue.contains("forth-k == forth-val"));
@@ -61,10 +61,12 @@ public class StreamFuncsTest {
 
     @Test
     public void getListKeyAndValueTest() {
-        assertEquals(8, listkeyAndValue.size());
-        assertTrue(listkeyAndValue.contains("first-k"));
-        assertTrue(listkeyAndValue.contains("first-val"));
+        List<String> listKeyAndValue = StreamFuncs.getListKeyAndValue(map);
+        assertEquals(8, listKeyAndValue.size());
+        assertTrue(listKeyAndValue.contains("first-k"));
+        assertTrue(listKeyAndValue.contains("first-val"));
     }
+
     @Test
     public void getNameTest() {
         TestClass testClass = null;
