@@ -28,7 +28,7 @@ public class StreamFuncs {
                 .collect(Collectors.toList());
     }
 
-    public static List<String> getListKeyEqualValue(HashMap<String, String> map) {
+    public static List<String> getListKeyEqualValue(Map<String, String> map) {
         return map.entrySet()
                 .stream()
                 .map(x -> x.getKey() + " == " + x.getValue())

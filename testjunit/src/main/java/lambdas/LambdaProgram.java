@@ -1,10 +1,5 @@
 package lambdas;
 
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-
 public class LambdaProgram {
     public static int getNum(OneFunctionalInterface one) {
         return one.getNum();

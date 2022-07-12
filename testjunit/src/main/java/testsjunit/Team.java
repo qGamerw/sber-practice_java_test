@@ -24,7 +24,7 @@ public class Team {
         } else {
             numberInTeam++;
             human = new Human(name);
-            arrNamesTeam = new ArrayList<String>();
+            arrNamesTeam = new ArrayList<>();
             arrNamesTeam.add(name);
             return "tests.Team is created";
         }
