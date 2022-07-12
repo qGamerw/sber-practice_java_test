@@ -20,7 +20,7 @@ public class StreamFuncsTest {
         map.put("second-k", "second-val");
         map.put("third-k", "third-val");
         map.put("forth-k", "forth-val");
-        listkeyAndValue = StreamFuncs.getListkeyAndValue(map);
+        listkeyAndValue = StreamFuncs.getListKeyAndValue(map);
         listKeyEqualValue = StreamFuncs.getListKeyEqualValue(map);
     }
     @Test
