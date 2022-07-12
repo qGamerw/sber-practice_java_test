@@ -36,7 +36,7 @@ public class StreamFuncsTest {
                 StreamFuncs.getMap(set).toString()
         );
         assertEquals("1234567891011-value", StreamFuncs.getMap(set).get("1234567891011-key"));
-        assertEquals(null, StreamFuncs.getMap(set).get("asd"));
+        assertNull(StreamFuncs.getMap(set).get("asd"));
     }
 
     @Test
