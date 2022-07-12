@@ -1,12 +1,7 @@
 package testsjunit;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 import java.util.ArrayList;
 
-@Data
-@AllArgsConstructor
 public class Team {
     private Human human;
     private int numberInTeam;
@@ -16,6 +11,11 @@ public class Team {
     public Team() {
         numberInTeam = 0;
         limitTeam = 2;
+    }
+    
+    public Team(int numberInTeam, int limitTeam) {
+        this.numberInTeam = numberInTeam;
+        this.limitTeam = limitTeam;
     }
 
     public String createdTeam(String name) {
@@ -54,6 +54,22 @@ public class Team {
 
     public String getHumanName() {
         return human.getNamePerson();
+    }
+    
+    public Human getHuman() {
+        return human;
+    }
+
+    public int getNumberInTeam() {
+        return numberInTeam;
+    }
+
+    public void setNumberInTeam(int numberInTeam) {
+        this.numberInTeam = numberInTeam;
+    }
+
+    public void setLimitTeam(int limitTeam) {
+        this.limitTeam = limitTeam;
     }
 
     private int getLimitTeam() {
