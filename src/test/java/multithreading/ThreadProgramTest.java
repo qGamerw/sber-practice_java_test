@@ -15,10 +15,8 @@ public class ThreadProgramTest {
     @Test
     public void taskTest2() throws InterruptedException {
         Thread sideThread = new Thread(() -> System.out.println("side thread"));
-        Thread mainThread = new Thread(() -> System.out.println("main thread"));
         sideThread.start();
         sideThread.join();
-        mainThread.start();
     }
 
     @Test
