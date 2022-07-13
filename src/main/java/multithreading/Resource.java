@@ -16,4 +16,7 @@ public class Resource {
         number--;
         notify();
     }
+    public static Runnable convertToRunnable(Runnable runnable) {
+        return runnable;
+    }
 }
