@@ -36,7 +36,7 @@ public class ThreadProgramTest {
     @Test
     public void taskTest4() {
         Resource resource = new Resource();
-        Thread manufacturerThread = new Thread(() -> {
+        Thread manufacturerThread = new Thread(Resource.convertToRunnable(() -> {
             for (int i = 0; i < 10; i++) {
                 try {
                     resource.addResource();
@@ -44,8 +44,8 @@ public class ThreadProgramTest {
                     e.printStackTrace();
                 }
             }
-        });
-        Thread consumerThread = new Thread(() -> {
+        }));
+        Thread consumerThread = new Thread(Resource.convertToRunnable(() -> {
             for (int i = 0; i < 10; i++) {
                 try {
                     resource.removeResource();
@@ -53,7 +53,7 @@ public class ThreadProgramTest {
                     e.printStackTrace();
                 }
             }
-        });
+        }));
         manufacturerThread.start();
         consumerThread.start();
     }
