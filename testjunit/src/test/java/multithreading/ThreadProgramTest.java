@@ -36,7 +36,7 @@ public class ThreadProgramTest {
     }
 
     @Test
-    public void taskTest4() throws InterruptedException {
+    public void taskTest4() {
         Resource resource = new Resource();
         Thread manufacturerThread = new Thread(Resource.convertToRunnable(resource::addResource));
         Thread consumerThread = new Thread(Resource.convertToRunnable(resource::removeResource));
