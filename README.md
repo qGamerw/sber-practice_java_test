@@ -1,6 +1,6 @@
 # sber-practice_java_test
 Практика в СберТех (Java Core)
-# Java. Базовый курс
+# Java. Базовый курс. Часть 2.
 
 1. Tests Junit
 1. Lambdas
