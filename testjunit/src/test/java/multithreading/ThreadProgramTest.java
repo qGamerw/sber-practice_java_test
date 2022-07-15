@@ -3,7 +3,7 @@ package multithreading;
 import org.junit.Test;
 
 public class ThreadProgramTest {
-    
+
     @Test
     public void taskThread1() {
         MyThread firstThread = new MyThread("First");
@@ -15,8 +15,10 @@ public class ThreadProgramTest {
     @Test
     public void taskTest2() throws InterruptedException {
         Thread sideThread = new Thread(() -> System.out.println("side thread"));
+        Thread mainThread = new Thread(() -> System.out.println("main thread"));
         sideThread.start();
         sideThread.join();
+        mainThread.start();
     }
 
     @Test
@@ -36,24 +38,9 @@ public class ThreadProgramTest {
     @Test
     public void taskTest4() {
         Resource resource = new Resource();
-        Thread manufacturerThread = new Thread(Resource.convertToRunnable(() -> {
-            for (int i = 0; i < 10; i++) {
-                try {
-                    resource.addResource();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }));
-        Thread consumerThread = new Thread(Resource.convertToRunnable(() -> {
-            for (int i = 0; i < 10; i++) {
-                try {
-                    resource.removeResource();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }));
+        Thread manufacturerThread = new Thread(Resource.convertToRunnable(resource::addResource));
+        Thread consumerThread = new Thread(Resource.convertToRunnable(resource::removeResource));
+
         manufacturerThread.start();
         consumerThread.start();
     }
